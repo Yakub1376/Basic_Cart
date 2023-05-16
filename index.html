@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Cart</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    width: 100vh;
+    display: grid;
+    height: 110vh;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 10px 20px;
+    gap: 20px;
+}
+
+/* input box */
+.input{
+    width: 100%;
+    height: 330px;
+    box-shadow: 0px 0px 6px 3px rgb(90, 89, 89);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+}
+.inputbox{
+    width: 90px;
+    height: 30px;
+}
+
+/* left box */
+.top1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.top{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+/* output */
+#output{
+    height: 500px;
+    width: 350px;
+    box-shadow: 0px 0px 6px 3px rgb(90, 89, 89);
+    border-radius: 12px;
+    margin-top: 80px;
+}
+
+
+/* button */
+.btn{
+    width: 270px;
+    height: 30px;
+    border-radius: 12px;
+}
+.btn:hover
+{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+/* image design */
+.img1{
+    margin-top: 20px;
+    width: 70%;
+}
+.img2{
+    margin-top: 19px;
+    width: 80%;
+    margin-bottom: 15px;
+}
+.img3{
+    margin-top: 19px;
+    width: 89%;
+    margin-bottom: 17px;
+}
+.img4{
+    margin-top: 19px;
+    width: 59%;
+}
+.img5{
+    margin-top: 19px;
+    width: 77%;
+    margin-bottom: 25px;
+}
+.img6{
+    margin-top: 19px;
+    width: 68%;
+    margin-bottom: 16px;
+}
+    </style>
+
+
+</head>
+
+<body>
+    <div id="main">
+        <div class="top1">
+            <div class="top">
+                <!-- First div -->
+                <div id="id1" onmouseover="colorchange('id1')" class="input">
+                    <img class="img1" src="./images/triangle.png" alt="">
+                    <h2 id="tri">triangle </h2>
+                    <p>Area (A) = 0.5*b*h</p>
+                    <div id="triinp">
+                        <input type="text" id="tri1">
+                        <p>cm</p>
+                        <input type="text" id="tri2">
+                        <p>cm</p>
+                    </div>
+                    <button onclick="calculate('triangle',tri1,tri2)" class="btn">Submit</button>
+                </div>
+    
+                <!-- second div -->
+                <div id="id3" onmouseover="colorchange('id3')" class="input">
+                    <img class="img2" src="./images/rectangle.png" alt="">
+                    <h2>Rectangle </h2>
+                    <p>Area (A) = W * l</p>
+                    <div id="triinp">
+                        <input type="text" id="rec1">
+                        <p>cm</p>
+                        <input type="text" id="rec2">
+                        <p>cm</p>
+                    </div>
+                    <button onclick="calculate('rectangle',rec1,rec2)" class="btn">Submit</button>
+                </div>
+    
+                <!-- third div -->
+                <div id="id2" onmouseover="colorchange('id2')" class="input">
+                    <img class="img3" src="./images/parallelogram.png" alt="">
+                    <h2>Parallelogram </h2>
+                    <p>Area (A) = b * h</p>
+                    <div id="triinp">
+                        <input type="text" id="par1">
+                        <p>cm</p>
+                        <input type="text" id="par2">
+                        <p>cm</p>
+                    </div>
+                    <button onclick="calculate('Parallelogram',par1,par2)" class="btn">Submit</button>
+                </div>
+            </div>
+            <div class="top">
+    
+                <!-- fourth div -->
+                <div id="id4" onmouseover="colorchange('id4')" class="input">
+                    <img class="img4" src="./images/pentagon.png" alt="">
+                    <h2 id="tri">Pentagon</h2>
+                    <p>Area (A) = 0.5 x p x b</p>
+                    <div id="triinp">
+                        <input type="text" id="pent1">
+                        <p>cm</p>
+                        <input type="text" id="pent2">
+                        <p>cm</p>
+                    </div>
+                    <button onclick="calculate('pentagon',pent1,pent2)" class="btn">Submit</button>
+                </div>
+    
+                <!-- fifth div -->
+                <div id="id5" onmouseover="colorchange('id5')" class="input">
+                    <img class="img5" src="./images/ellipse.png" alt="">
+                    <h2>Ellipse</h2>
+                    <p>Area (A) = pi * a * b</p>
+                    <div id="triinp">
+                        <input type="text" id="ell1">
+                        <p>cm</p>
+                        <input type="text" id="ell2">
+                        <p>cm</p>
+                    </div>
+                    <button onclick="calculate('ellipse',ell1,ell2)" class="btn">Submit</button>
+                </div>
+    
+                <!-- sixth div -->
+                <div id="id6" onmouseover="colorchange('id6')" class="input">
+                    <img class="img6" src="./images/rhombus.png" alt="">
+                    <h2>Rhombus</h2>
+                    <p>Area (A) = b * h</p>
+                    <div id="triinp">
+                        <input type="text" id="rhom1">
+                        <p>cm</p>
+                        <input type="text" id="rhom2">
+                        <p>cm</p>
+                    </div>
+                    <button onclick="calculate('rhombus',rhom1,rhom2)" class="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!-- output div -->
+        <div id="output">
+            <h2 style="text-align: center;">Area calculation</h2>
+            <p id="demo"></p>
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
